@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>Hompage</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="static/bootstrap.min.css" rel="stylesheet" media="screen">
+    </head>
+    <body style = "background-color:lavender;">
+        <div class="container">
+          <h1 style = "text-align:center;font-family: arial, sans-serif;">Carley's Book Nook: Homepage</h1>
+          <br>
+          <form style = "text-align:center;font-family: arial, sans-serif;" action="" method="post">
+            <input type="text" placeholder="Search Here" name="search" value="{{
+              request.form.search }}">
+            <input class="btn btn-default" type="submit" value="Search">
+          </form>
+          {% if error %}
+            <p class="error"><strong>Error:</strong> {{ error }}
+          {% endif %}
+          {% for message in get_flashed_messages() %}
+          {{message}}
+          {% endfor %}
+          <br>
+          <p style = "text-align:center;font-family: arial, sans-serif;">Click <a href ="/logout"> here </a> to logout. </p>
+          {% for message in get_flashed_messages() %}
+          {{message}}
+          {% endfor %}
+        </div>
+    </body>
+</html>
+
+
+
+
+
+
